@@ -28,23 +28,26 @@ namespace Group_Project
             
             }
 
-        
-        private void mini(object sender, RoutedEventArgs e)
-        {
-
-            WindowState = WindowState.Minimized;
-
-        }
 
         private void clsclk(object sender, RoutedEventArgs e)
         {
-            Window window = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
 
-            // close the window
-            window.Close();
-            var windowx = new Admin_Window();
-            windowx.Show();
+            {
+                Window window = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
+
+                // close the window
+                window.Close();
+
+            }
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+      
+
+        
     }
     
    

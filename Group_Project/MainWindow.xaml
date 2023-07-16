@@ -54,11 +54,12 @@
 
 
                     </StackPanel>
+                        <TextBlock Text="Lecturers" Style="{StaticResource Topics}" />
                     <StackPanel Orientation="Horizontal">
+                        
                       <TextBlock Foreground="White" Margin="70 30 0 0" Text="ID"/>
                         <TextBlock Foreground="White" Text="Name" Margin="100 30 0 0"/>
 
-                            <TextBlock Foreground="White" Text="Module" Margin="140 30 0 0"/>
                     </StackPanel>
                     <ListView  x:Name="listview" Background="Transparent" ItemsSource="{Binding Admins,UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelecteAdmin,UpdateSourceTrigger=PropertyChanged}">
                         <ListView.ItemTemplate>
@@ -67,9 +68,7 @@
 
                                     <TextBlock Width="20" FontSize="7" FontWeight="Bold" Foreground="Snow" Margin="70 30 0 0" Text="{Binding Id,UpdateSourceTrigger=PropertyChanged}"/>
                                     <TextBlock Width="60" FontSize="7" FontWeight="Bold"  Foreground="Snow" Margin="100 30 0 0" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"/>
-                                    <TextBlock Width="60" FontSize="7" FontWeight="Bold"  Foreground="Snow" Margin="110 30 0 0" Text="{Binding Module, UpdateSourceTrigger=PropertyChanged}"/>
-
-
+                                  
                                     <Button Margin="60 10 0 0"  
                                             Width="200"
                                            
@@ -102,7 +101,7 @@
                     <StackPanel>
            
 
-                        <Button Margin="0 200 0 0" x:Name="a" Click="x" Content=" register"
+                        <Button Margin="0 100 0 0" x:Name="a" Click="x" Content=" register"
                                 Width="202"
                                 
                                 Background="Blue"

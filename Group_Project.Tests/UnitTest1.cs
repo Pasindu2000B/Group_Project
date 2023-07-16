@@ -13,20 +13,23 @@ namespace Group_Project.Tests
         [Fact]
         public void NAMESHOULDBETHERE()
         {
+            
             var vm=new StudentVM();
            
-            vm.user_name = "caa";
+            vm.user_name = "aaa";
             vm.imageURL = "aaa";
             vm.name = "name";
             vm.password = "password";
             vm.Save();
             var student=new Student();
-            student.Name = "name";
+            student.UserName= "aaa";
+           
+         
             var db = new Student_Data_Context();
             using (db)
             {
                 db.Database.EnsureCreated();
-                db.Students.Any(p=>p.Name == student.Name).Should().BeTrue();
+                db.Students.Any(p=>p.UserName == student.UserName).Should().BeTrue();
                 var pat=db.Students.First();
                 db.Students.Remove(pat);
                 db.SaveChanges();

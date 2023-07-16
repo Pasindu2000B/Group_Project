@@ -41,7 +41,7 @@ namespace Group_Project
                 name = s.Name;
                 user_name = s.UserName;
                 password = s.Password;
-                module = s.Module;
+             
                  
                 }
              
@@ -62,11 +62,11 @@ namespace Group_Project
                 name = admin.Name;
                 user_name = admin.UserName;
                 password = admin.Password;
-                module = admin.Module;
+               
             }
             else
             {
-                MessageBox.Show("hukhn");
+                MessageBox.Show("not");
                 return;
             }
 
@@ -95,7 +95,7 @@ namespace Group_Project
                     break;
                 }
             }
-            if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(user_name) || string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(module) )
+            if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(user_name) || string.IsNullOrWhiteSpace(password)  )
             {
                 MessageBox.Show("spaces cannot be empty.", "Error");
                 return;
@@ -138,7 +138,7 @@ namespace Group_Project
                             Name = name,
                             Password = password,
                             UserName = user_name,
-                            Module= module,
+                            
 
                             
                         };
@@ -170,7 +170,14 @@ namespace Group_Project
                     db.SaveChanges();
                     db.Admins.Add(s);
                     db.SaveChanges();
-                    
+                    Window window = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
+
+                    // close the window
+                    window.Close();
+                    var window2 = new MainWindow();
+                    window2.Show();
+
+
                     MessageBox.Show("Succesfully Edit Your Profile ");
 
                   

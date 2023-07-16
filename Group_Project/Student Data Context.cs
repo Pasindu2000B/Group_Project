@@ -9,7 +9,7 @@ namespace Group_Project
 {
     public class Student_Data_Context : DbContext
     {
-        public string path = @"C:\Users\Asus\Desktop\New folder\Group_Project (5)\Group_Project\Group_Project.Tests\FirstDatabase.db";
+        public string path = @"C:\Users\Asus\Desktop\New folder\Group_Project (5)\Group_Project\Group_Project.Tests\LatestDatabase.db";
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {

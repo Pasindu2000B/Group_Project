@@ -16,7 +16,9 @@ namespace Group_Project
 
         public string ModuleResult { get; set; }
 
-        public Module() { }
+        public Module() {
+          
+        }
 
         public Module(int id, string moduleName, string moduleResult, int credit)
         {

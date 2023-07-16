@@ -78,12 +78,12 @@ xmlns:local="clr-namespace:Group_Project"
                                         <Button Margin="10 10 0 0"  Content="Show"  Command="{Binding DataContext.resultshowCommand, RelativeSource={RelativeSource AncestorType=ListView}}" CommandParameter="{Binding}" Style="{StaticResource ClickMeButton}">
 
                                         </Button>
-                                        <Button Margin="10 10 0 0"  Content="Delete"  Command="{Binding DataContext.DeleteAnyUserCommand, RelativeSource={RelativeSource AncestorType=ListView}}" CommandParameter="{Binding}" Style="{StaticResource CloseButton}">
-
+                                        <Button Margin="10 10 0 0"   Command="{Binding DataContext.DeleteAnyUserCommand, RelativeSource={RelativeSource AncestorType=ListView}}" CommandParameter="{Binding}" Style="{StaticResource CloseButton}">
+                                            <icon:PackIconMaterial Kind="TrashCan"/>
                                         </Button>
 
-                                        <Button Margin="10 10 0 0"  Content="Delete"  Command="{Binding DataContext.EditSeletctStudentCommand, RelativeSource={RelativeSource AncestorType=ListView}}" CommandParameter="{Binding}" Style="{StaticResource CloseButton}">
-
+                                        <Button Margin="10 10 0 0"    Command="{Binding DataContext.EditSeletctStudentCommand, RelativeSource={RelativeSource AncestorType=ListView}}" CommandParameter="{Binding}" Style="{StaticResource CloseButton}">
+                                            <icon:PackIconMaterial Kind="Pencil"/>
                                         </Button>
                                        
                                     </StackPanel>
