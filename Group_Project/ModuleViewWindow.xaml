@@ -1,0 +1,124 @@
+﻿<Window x:Class="Group_Project.ModuleViewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:local="clr-namespace:Group_Project"
+        mc:Ignorable="d"
+        Title="ModuleViewWindow" Height="650" Width="800"
+       WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent">
+    <Window.DataContext>
+        <local:AdminVM/>
+    </Window.DataContext>
+    <Grid>
+
+        <Border CornerRadius="60">
+            <Border.Background>
+                <ImageBrush ImageSource="/images/login.png"/>
+            </Border.Background>
+
+
+
+            <Border CornerRadius="50"
+                    BorderThickness="5"
+                    Opacity="0.9">
+
+                <Border.BorderBrush>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="Purple" Offset="0"/>
+                        <GradientStop Color="MidnightBlue" Offset="0.75"/>
+                        <GradientStop Color="DeepPink" Offset="1"/>
+
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+                <Border.Background >
+                    <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="DarkBlue" Offset="1"/>
+
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="7*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+
+
+
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Click="clsclk" Style="{StaticResource CloseButton}" Margin="769 0 0 0 " >
+                                <icon:PackIconMaterial Kind="Close" Height="10" />
+                            </Button>
+                            <Button Click="mini" Style="{StaticResource MiniButton }" Margin="-70 0 0 0" >
+                                <icon:PackIconMaterial Kind="Minus" Width="12"/>
+
+                            </Button>
+
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="MODULE ID" Style="{StaticResource Topics}"/>
+                            <TextBlock Text="MODULE NAME" Style="{StaticResource Topics}" Width="202" />
+
+                        </StackPanel>
+                        <ListView x:Name="listview" Background="Transparent" ItemsSource="{Binding Smodules,UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedModule ,UpdateSourceTrigger=PropertyChanged}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock FontSize="15" Foreground="Purple" Margin="70 30 0 0" Text="{Binding Id,UpdateSourceTrigger=PropertyChanged}"/>
+                                        <TextBlock FontSize="15" Foreground="Purple" Margin="140 30 0 0" Text="{Binding ModuleName,UpdateSourceTrigger=PropertyChanged}"/>
+
+
+
+
+
+
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                        <Button   Content="Delete Module" Command="{Binding deleteModuleCommand}" Style="{StaticResource ClickMeButton}" Click="Button_Click"
+                                Margin="20"
+                                Width="200"
+                                Background="Blue"
+                                Foreground="AntiqueWhite"
+                                FontSize="15"
+                                HorizontalAlignment="Center"
+                                FontWeight="Medium"/>
+
+                    </StackPanel>
+                    <StackPanel Grid.Row="1">
+                        <TextBlock Style="{StaticResource ResourceKey=Topics}" Text="NEW MODULE NAME OF SELECTED MODULE" Width="585"/>
+                        <TextBox Width="300" Text="{Binding NewName}" 
+                                FontSize="14"
+                                FontWeight="Medium"
+                                Foreground="AntiqueWhite"
+                                Background="Transparent"
+                                CaretBrush="LightGray"
+                                BorderBrush="DarkGray"
+                                BorderThickness="0,0,0,3"
+                                Height="20"
+                                Padding="20,0,0,0"/>
+                        <Button  Content="Save New Module Name" Command="{Binding updateModulesCommand}" Style="{StaticResource ClickMeButton}"
+                                Margin="20"
+                                Width="250"
+                                Background="Blue"
+                                Foreground="AntiqueWhite"
+                                FontSize="12"
+                                HorizontalAlignment="Center"
+                                FontWeight="Medium"/>
+                    </StackPanel>
+                    
+                    
+                    
+                </Grid>
+            </Border>
+        </Border>
+    </Grid>
+</Window>
